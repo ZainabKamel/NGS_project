@@ -6,6 +6,7 @@
 # changing to this data (the Vbox VM gaves no-space-left-on-device-error)
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
 #Downloading Transcriptome 
+wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/cdna/Danio_rerio.GRCz11.cdna.all.fa.gz
 
 #Download seqtk
 sudo apt install seqtk
