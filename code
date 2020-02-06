@@ -1,4 +1,5 @@
-# Download Data
+# Download Data 
+#Downloading Sample data of Danio reio 
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_1.clean.fq.gz
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_2.clean.fq.gz
-
+#Downloading Transcriptome 
