@@ -1,12 +1,11 @@
 # Download Data 
 #Downloading Sample data of Danio reio 
-wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_1.clean.fq.gz
-wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_2.clean.fq.gz
+# wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_1.clean.fq.gz
+# wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_2.clean.fq.gz
 
-
-#	https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
-#Downloading Human Transcriptome 
-
+# changing to this data (the Vbox VM gaves no-space-left-on-device-error)
+wget https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
+#Downloading Transcriptome 
 
 #Download seqtk
 sudo apt install seqtk
