@@ -6,3 +6,10 @@ wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/z
 
 #	https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
 #Downloading Human Transcriptome 
+
+
+#Download seqtk
+sudo apt install seqtk
+
+#subset data to 5M
+seqtk sample -s100 B2-59_GTGAAA_L002_R1_001.fastq 5000000 > B2-59_GTGAAA_L002_R1_001_sub5M.fastq 
