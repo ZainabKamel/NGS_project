@@ -8,6 +8,8 @@ wget https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B
 #Downloading Transcriptome 
 wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/cdna/Danio_rerio.GRCz11.cdna.all.fa.gz
 
+http://www.ensembl.org/Danio_rerio/Info/Annotation
+
 #Download seqtk
 sudo apt install seqtk
 
