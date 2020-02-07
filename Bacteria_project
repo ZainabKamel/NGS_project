@@ -1,1 +1,5 @@
-
+mkdir ~/workdir/bacteria_project/sample_data && cd ~/workdir/bacteria_project/sample_data
+# Download Data
+wget https://sra-download.ncbi.nlm.nih.gov/traces/sra48/SRZ/011024/SRR11024721/ae6d019b1f9da7f92c4747560f0978c6_1.fastq.gz
+wget https://sra-download.ncbi.nlm.nih.gov/traces/sra48/SRZ/011024/SRR11024721/ae6d019b1f9da7f92c4747560f0978c6_2.fastq.gz
+#Download Annotation
