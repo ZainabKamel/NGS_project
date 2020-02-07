@@ -6,11 +6,15 @@ mkdir ~/workdir/Project_ngs1/sample_data && cd ~/workdir/Project_ngs1/sample_dat
 
 # changing to this data (the Vbox VM gaves no-space-left-on-device-error)
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
+gunzip B2-59_GTGAAA_L002_R1_001.fastq.gz 
+
 #Downloading Transcriptome 
 wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/cdna/Danio_rerio.GRCz11.cdna.all.fa.gz
+gunzip Danio_rerio.GRCz11.cdna.all.fa.gz
 
 #Download Annotation
 wget ftp://ftp.ensembl.org/pub/release-99/gtf/danio_rerio/Danio_rerio.GRCz11.99.chr.gtf.gz
+gunzip Danio_rerio.GRCz11.99.chr.gtf.gz
 
 #Download seqtk
 sudo apt install seqtk
