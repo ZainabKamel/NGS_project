@@ -1,8 +1,13 @@
 mkdir -p ~/workdir/bacteria_project/sample_data && cd ~/workdir/bacteria_project/sample_data
 # Download Data
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra48/SRZ/011024/SRR11024721/ae6d019b1f9da7f92c4747560f0978c6_1.fastq.gz
+gunzip ae6d019b1f9da7f92c4747560f0978c6_1.fastq.gz
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra48/SRZ/011024/SRR11024721/ae6d019b1f9da7f92c4747560f0978c6_2.fastq.gz
+gunzip ae6d019b1f9da7f92c4747560f0978c6_2.fastq.gz
 #Download Annotation
 wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-46/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz
+gunzip escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz
 #Download seqtk
-sudo apt install seqtk
+sudo apt install seqtk 
+
+mkdir -p ~/workdir/bacteria_project/Hisat_align/Hisat_Index && cd ~/workdir/bacteria_project/Hisat_align/Hisat_Index
