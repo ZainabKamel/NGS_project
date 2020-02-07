@@ -1,3 +1,4 @@
+mkdir ~/workdir/Project_ngs1/sample_data && cd ~/workdir/Project_ngs1/sample_data
 # Download Data 
 #Downloading Sample data of Danio reio 
 # wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_1.clean.fq.gz
@@ -16,3 +17,19 @@ sudo apt install seqtk
 
 #subset data to 5M
 seqtk sample -s100 B2-59_GTGAAA_L002_R1_001.fastq 5000000 > B2-59_GTGAAA_L002_R1_001_sub5M.fastq 
+
+#Allignment using Hisat
+mkdir ~/workdir/Project_ngs1/Hisat_align/Hisat_Index && cd ~/workdir/Project_ngs1/Hisat_align/Hisat_Index
+
+#Indexing 
+ln -s ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.cdna.all.fa
+hisat2_extract_splice_sites.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > splicesites.tsv 
+hisat2_extract_exons.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > exon.tsv
+hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.cdna.all.fa Danio_rerio.GRCz11
+
+#Align
+cd ~/workdir/Project_ngs1/Hisat_align
+R1="$HOME/workdir/Project_ngs1/sample_data/B2-59_GTGAAA_L002_R1_001_sub5M.fastq"
+#### (still needs modificatio) hisat2 -p 1 -x Hisat_Index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2  -S B2-59_GTGAAA_L002_R1_001_sub5M.sam
+
+
