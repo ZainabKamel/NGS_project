@@ -8,7 +8,7 @@ mkdir ~/workdir/Project_ngs1/sample_data && cd ~/workdir/Project_ngs1/sample_dat
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra70/SRZ/010916/SRR10916829/B2-59_GTGAAA_L002_R1_001.fastq.gz
 gunzip B2-59_GTGAAA_L002_R1_001.fastq.gz 
 
-#Downloading Transcriptome 
+#Downloading Referance
 wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/cdna/Danio_rerio.GRCz11.cdna.all.fa.gz
 gunzip Danio_rerio.GRCz11.cdna.all.fa.gz
 
