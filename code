@@ -47,6 +47,32 @@ Check the Alignment summary!
 
 
 
+#Prepare the SAM file for assembly
+# install Samtools
+conda activate ngs1
+conda install -y samtools
+# convert the SAM file into BAM file 
+samtools view -bS B2-59_GTGAAA_L002_R1_001_sub5M.sam > B2-59_GTGAAA_L002_R1_001_sub5M.bam
+#convert the BAM file to a sorted BAM file. 
+samtools sort B2-59_GTGAAA_L002_R1_001_sub5M.bam -o B2-59_GTGAAA_L002_R1_001_sub5M.sorted.bam
+
+# install stringtie
+conda activate ngs1
+conda install -y stringtie
+
+#Assembly without known annotations
+stringtie B2-59_GTGAAA_L002_R1_001_sub5M.sorted.bam --rf -l ref_free -o ref_free.gtf
+## how many transcript do you have?
+cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
+
+
+# Assembly with known previous annotations
+stringtie B2-59_GTGAAA_L002_R1_001_sub5M.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup.gtf
+## how many transcript do you have?
+cat ref_sup.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
+
+
+
 
 
 
