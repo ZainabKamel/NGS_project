@@ -34,6 +34,19 @@ hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.cdna.
 #Align
 cd ~/workdir/project_ngs1/Hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/B2-59_GTGAAA_L002_R1_001_sub5M.fastq"
-#### (still needs modificatio) hisat2 -p 1 -x Hisat_Index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2  -S B2-59_GTGAAA_L002_R1_001_sub5M.sam
+hisat2 -p 1 -x Hisat_Index/Danio_rerio.GRCz11 --dta --rna-strandness RF -U $R1 -S B2-59_GTGAAA_L002_R1_001_sub5M.sam
+
+Check the Alignment summary!
+
+5000000 reads; of these:
+  5000000 (100.00%) were unpaired; of these:
+    925192 (18.50%) aligned 0 times
+    1991225 (39.82%) aligned exactly 1 time
+    2083583 (41.67%) aligned >1 times
+81.50% overall alignment rate
+
+
+
+
 
 
