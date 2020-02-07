@@ -23,10 +23,10 @@ sudo apt install seqtk
 seqtk sample -s100 B2-59_GTGAAA_L002_R1_001.fastq 5000000 > B2-59_GTGAAA_L002_R1_001_sub5M.fastq 
 
 #Allignment using Hisat
-mkdir ~/workdir/Project_ngs1/Hisat_align/Hisat_Index && cd ~/workdir/Project_ngs1/Hisat_align/Hisat_Index
+mkdir -p ~/workdir/Project_ngs1/Hisat_align/Hisat_Index && cd ~/workdir/Project_ngs1/Hisat_align/Hisat_Index
 
 #Indexing 
-ln -s ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.cdna.all.fa
+ln -s ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.cdna.all.fa .
 hisat2_extract_splice_sites.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > splicesites.tsv 
 hisat2_extract_exons.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > exon.tsv
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.cdna.all.fa Danio_rerio.GRCz11
