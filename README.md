@@ -29,3 +29,9 @@ seqtk sample -s100 MC_MYR2_R1.fastq 5000000 > MC_MYR2_R1_5M.fastq
 hisat2_extract_splice_sites.py ~/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > splicesites.tsv
 hisat2_extract_exons.py ~/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > exons.tsv
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.chromosome.10.fa Danio_rerio.GRCz11
+
+
+7. gzip 
+R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
+R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
+hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S align.sam
