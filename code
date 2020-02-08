@@ -1,4 +1,4 @@
-mkdir ~/workdir/Project_ngs1/sample_data && cd ~/workdir/Project_ngs1/sample_data
+mkdir ~/workdir/project_ngs1/sample_data && cd ~/workdir/project_ngs1/sample_data
 
 ## create the conda env if you have not already did
 conda create -y --name ngs1 python=3.6
