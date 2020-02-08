@@ -27,6 +27,9 @@ sudo apt install seqtk
 #subset data to 5M
 seqtk sample -s100 B2-59_GTGAAA_L002_R1_001.fastq 5000000 > B2-59_GTGAAA_L002_R1_001_sub5M.fastq 
 
+# install Hisat
+conda install -c bioconda -y hisat2
+
 #Allignment using Hisat
 mkdir -p ~/workdir/project_ngs1/Hisat_align/Hisat_Index && cd ~/workdir/project_ngs1/Hisat_align/Hisat_Index
 
