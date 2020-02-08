@@ -35,3 +35,17 @@ hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.c
 R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S align.sam
+5000000 reads; of these:
+  5000000 (100.00%) were paired; of these:
+    4827233 (96.54%) aligned concordantly 0 times
+    159564 (3.19%) aligned concordantly exactly 1 time
+    13203 (0.26%) aligned concordantly >1 times
+    ----
+    4827233 pairs aligned concordantly 0 times; of these:
+      2462 (0.05%) aligned discordantly 1 time
+    ----
+    4824771 pairs aligned 0 times concordantly or discordantly; of these:
+      9649542 mates make up the pairs; of these:
+        9534026 (98.80%) aligned 0 times
+        79790 (0.83%) aligned exactly 1 time
+        35726 (0.37%) aligned >1 times
