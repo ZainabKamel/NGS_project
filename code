@@ -1,4 +1,9 @@
 mkdir ~/workdir/Project_ngs1/sample_data && cd ~/workdir/Project_ngs1/sample_data
+
+## create the conda env if you have not already did
+conda create -y --name ngs1 python=3.6
+conda activate ngs1
+
 # Download Data 
 #Downloading Sample data of Danio reio 
 # wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRZ/010951/SRR10951081/zb-mito_1.clean.fq.gz
