@@ -38,7 +38,19 @@ for the code open modified_code file
 4.66% overall alignment rate
  ```
 
+## Prepare the SAM file for assembly
+ ```
+# install Samtools
 
-        
+# convert the SAM file into BAM file then sort it
+
+use stringtie to get transcript
+
+## Transcript 
+
+Assembly without known annotations have 1680 transcript 
+
+Assembly with known previous annotations have 1814 transcript 
+ ```
         
         
