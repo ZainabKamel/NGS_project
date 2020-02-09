@@ -1,10 +1,12 @@
 ## NGS_project
 
-# for the code open modefied_code file
+# for the code open modified_code file
 
-# Data Download
+# Data Downloading
 1. Sample Data
+```
    Check the QC of the data and GC content from the "multiqc_report.html" file
+   ```
 2. Transcriptome 
 3. Annotation file 
 
