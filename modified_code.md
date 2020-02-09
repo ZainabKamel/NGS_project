@@ -92,7 +92,7 @@ stringtie MC_MYR2_align.sorted.bam --rf -l ref_free -o ref_free.gtf
 cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 
 # Assembly with known previous annotations
-stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/sample_data/chr22_with_ERCC92.gtf -o ref_sup.gtf
+stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup.gtf
 
 ## how many transcript do you have?
 cat ref_sup.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
