@@ -58,6 +58,7 @@ gzip MC_MYR2_R2_5M.fastq
 conda install -c bioconda -y hisat2
 
 mkdir ~/project_ngs1/hisat_align/hisat_index && cd ~/project_ngs1/hisat_align/hisat_index
+ln -s ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.dna.chromosome.10.fa .
 
 # Indexing 
 hisat2_extract_splice_sites.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > splicesites.tsv
