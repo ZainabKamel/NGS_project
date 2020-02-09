@@ -26,7 +26,7 @@ for the code open modified_code file
     4827233 (96.54%) aligned concordantly 0 times
     159564 (3.19%) aligned concordantly exactly 1 time
     13203 (0.26%) aligned concordantly >1 times
-    ----
+    ---- 
     4827233 pairs aligned concordantly 0 times; of these:
       2462 (0.05%) aligned discordantly 1 time
     ----
@@ -48,7 +48,7 @@ use stringtie to get transcript
 
 ## Transcript 
 
-Assembly without known annotations have 1680 transcript 
+Assembly without known annotations have 1680 transcript  
 
 Assembly with known previous annotations have 1814 transcript 
  ```
