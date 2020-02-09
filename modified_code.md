@@ -67,8 +67,8 @@ hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.c
 
 #Align
 cd ~/workdir/project_ngs1/hisat_align
-R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
-R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
+R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
+R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
 ```
 
