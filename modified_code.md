@@ -41,20 +41,20 @@ multiqc -z -o . .
 ```
 
 ```
-#Download seqtk
+# Download seqtk
 sudo apt install seqtk
 
 # subsetting to 5M 
 seqtk sample -s100 MC_MYR2_R1.fastq 5000000 > MC_MYR2_R1_5M.fastq
 seqtk sample -s100 MC_MYR2_R2.fastq 5000000 > MC_MYR2_R2_5M.fastq
-#copress files
+# copress files
 gzip MC_MYR2_R1_5M.fastq
 gzip MC_MYR2_R2_5M.fastq
 ```
 
 ## for Alignment
 ```
-#Install hisat 
+# Install hisat 
 conda install -c bioconda -y hisat2
 
 mkdir ~/project_ngs1/hisat_align/hisat_index && cd ~/project_ngs1/hisat_align/hisat_index
@@ -71,16 +71,17 @@ R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
 ```
 
-#Prepare the SAM file for assembly
+# Prepare the SAM file for assembly
+```
 # install Samtools
 conda install -y samtools
 # convert the SAM file into BAM file 
 samtools view -bS MC_MYR2_align.sam > MC_MYR2_align.bam
 #convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_align.bam -o MC_MYR2_align.sorted.bam
+```
 
-
-#install stringtie
+# install stringtie
 conda install -y stringtie
 
 # Assembly without known annotations
@@ -89,7 +90,7 @@ stringtie MC_MYR2_align.sorted.bam --rf -l ref_free -o ref_free.gtf
 ## how many transcript do you have?
 cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 
-#Assembly with known previous annotations
+# Assembly with known previous annotations
 stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/sample_data/chr22_with_ERCC92.gtf -o ref_sup.gtf
 
 ## how many transcript do you have?
