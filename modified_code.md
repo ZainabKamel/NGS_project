@@ -66,7 +66,7 @@ hisat2_extract_exons.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.chromosome.10.fa Danio_rerio.GRCz11
 
 #Align
-cd ~/workdir/project_ngs1/Hisat_align
+cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
