@@ -15,9 +15,8 @@
 6. Indexing 
 
 7. gzip 
-R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
-R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
-hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S align.sam
+8. hisat report
+
 5000000 reads; of these:
   5000000 (100.00%) were paired; of these:
     4827233 (96.54%) aligned concordantly 0 times
@@ -32,4 +31,8 @@ hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -
         9534026 (98.80%) aligned 0 times
         79790 (0.83%) aligned exactly 1 time
         35726 (0.37%) aligned >1 times
+        
+        
+        
+        
         
