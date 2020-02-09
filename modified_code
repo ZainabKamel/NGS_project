@@ -1,13 +1,31 @@
 ## create the conda env if you have not already did
+```
 conda create -y --name ngs1 python=3.6
 conda activate ngs1
 
 mkdir ~/workdir/project_ngs1/sample_data && cd ~/workdir/project_ngs1/sample_data
+```
 
-#Download Sample Data 
+## Downloading data 
+```
+# Sample Data 
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra49/SRZ/010956/SRR10956573/MC_MYR2_R1.fastq.gz
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra49/SRZ/010956/SRR10956573/MC_MYR2_R2.fastq.gz
+gunzip MC_MYR2_R1.fastq.gz
+gunzip MC_MYR2_R2.fastq.gz
 
+# Transcriptome
+#wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/dna/Danio_rerio.GRCz11.dna.toplevel.fa.gz
+wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/dna/Danio_rerio.GRCz11.dna.chromosome.10.fa.gz
+gunzip Danio_rerio.GRCz11.dna.chromosome.10.fa.gz
+
+#Annotation file 
+wget ftp://ftp.ensembl.org/pub/release-99/gtf/danio_rerio/Danio_rerio.GRCz11.99.chr.gtf.gz
+gunzip Danio_rerio.GRCz11.99.chr.gtf.gz
+```
+
+## to get QC Report
+```
 # Install the QC file generator
 conda install -c bioconda fastqc 
 conda install -c bioconda multiqc 
@@ -20,20 +38,9 @@ mkdir -p ~/workdir/project_ngs1/FASTQC && cd ~/workdir/project_ngs1/FASTQC
 mv ../sample_data/*html ./
 mv ../sample_data/*zip ./
 multiqc -z -o . .
+```
 
-
-gunzip MC_MYR2_R1.fastq.gz
-gunzip MC_MYR2_R2.fastq.gz
-
-Transcriptome
-#wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/dna/Danio_rerio.GRCz11.dna.toplevel.fa.gz
-wget ftp://ftp.ensembl.org/pub/release-99/fasta/danio_rerio/dna/Danio_rerio.GRCz11.dna.chromosome.10.fa.gz
-gunzip Danio_rerio.GRCz11.dna.chromosome.10.fa.gz
-
-#Annotation file 
-wget ftp://ftp.ensembl.org/pub/release-99/gtf/danio_rerio/Danio_rerio.GRCz11.99.chr.gtf.gz
-gunzip Danio_rerio.GRCz11.99.chr.gtf.gz
-
+```
 #Download seqtk
 sudo apt install seqtk
 
@@ -43,8 +50,10 @@ seqtk sample -s100 MC_MYR2_R2.fastq 5000000 > MC_MYR2_R2_5M.fastq
 #copress files
 gzip MC_MYR2_R1_5M.fastq
 gzip MC_MYR2_R2_5M.fastq
+```
 
-
+## for Alignment
+```
 #Install hisat 
 conda install -c bioconda -y hisat2
 
@@ -60,6 +69,7 @@ cd ~/workdir/project_ngs1/Hisat_align
 R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
+```
 
 #Prepare the SAM file for assembly
 # install Samtools
