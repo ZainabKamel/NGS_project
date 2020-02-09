@@ -8,7 +8,7 @@ mkdir ~/workdir/project_ngs1/sample_data && cd ~/workdir/project_ngs1/sample_dat
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra49/SRZ/010956/SRR10956573/MC_MYR2_R1.fastq.gz
 wget https://sra-download.ncbi.nlm.nih.gov/traces/sra49/SRZ/010956/SRR10956573/MC_MYR2_R2.fastq.gz
 
-# Install the software
+# Install the QC file generator
 conda install -c bioconda fastqc 
 conda install -c bioconda multiqc 
 
@@ -45,8 +45,8 @@ gzip MC_MYR2_R1_5M.fastq
 gzip MC_MYR2_R2_5M.fastq
 
 
-#Hisat
-Install hisat conda install -c bioconda -y hisat2
+#Install hisat 
+conda install -c bioconda -y hisat2
 
 mkdir ~/project_ngs1/hisat_align/hisat_index && cd ~/project_ngs1/hisat_align/hisat_index
 
