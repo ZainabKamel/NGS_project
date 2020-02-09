@@ -1,7 +1,7 @@
 ## create the conda env if you have not already did
 ```
-conda create -y --name ngs1 python=3.6
-conda activate ngs1
+conda create -y --name project python=3.6
+conda activate project
 
 mkdir ~/workdir/project_ngs1/sample_data && cd ~/workdir/project_ngs1/sample_data
 ```
