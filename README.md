@@ -2,7 +2,7 @@
 ```
 for the code open modified_code file
 ```
-# Data Downloading
+# Data Downloading   
 1. Sample Data
 ```
    Check the QC of the data and GC content from the "multiqc_report.html" file
