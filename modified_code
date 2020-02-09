@@ -25,6 +25,10 @@ sudo apt install seqtk
 # subsetting to 5M 
 seqtk sample -s100 MC_MYR2_R1.fastq 5000000 > MC_MYR2_R1_5M.fastq
 seqtk sample -s100 MC_MYR2_R2.fastq 5000000 > MC_MYR2_R2_5M.fastq
+#copress files
+gzip MC_MYR2_R1_5M.fastq
+gzip MC_MYR2_R2_5M.fastq
+
 
 #Hisat
 Install hisat conda install -c bioconda -y hisat2
@@ -38,12 +42,19 @@ hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.c
 
 #Align
 cd ~/workdir/project_ngs1/Hisat_align
-R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq"
-R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq"
-
-gzip MC_MYR2_R1_5M.fastq
-gzip MC_MYR2_R2_5M.fastq
-
 R1="$HOME/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
-hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S align.sam
+hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
+
+#Prepare the SAM file for assembly
+# install Samtools
+conda install -y samtools
+# convert the SAM file into BAM file 
+samtools view -bS MC_MYR2_align.sam > MC_MYR2_align.bam
+#convert the BAM file to a sorted BAM file. 
+samtools sort MC_MYR2_align.bam -o MC_MYR2_align.sorted.bam
+
+
+
+
+
