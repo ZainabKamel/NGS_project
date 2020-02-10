@@ -1,5 +1,10 @@
 ## NGS1_project
 
+# Abstract 
+```
+The aim for this Code is to get access for data and download it, subset the data to 5 million reads make html file showing CG content and QC then index the files to making the alignment using Hisat package then make the secondary alignment after that getting the SAM and BAM files and index the BAM file for visualization by the igv program after that get transcript and making the assembly with no reference and another time by reference finally compare the output gtf files of primary and secondary alignments  
+```
+
 # Git hub link
 ```
 https://github.com/ZainabKamel/NGS_project
