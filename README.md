@@ -74,5 +74,76 @@ use stringtie to get transcript
 
 2ry Assembly with known previous annotations have 1786 transcript
  ```
-        
+## Comparing GTF files of 1ry & 2ry Alignment
+ ```
+# Install gffcompare
+
+# Run for ref free Report
+ ```
+ # gffcompare v0.11.2 | Command line was:
+#gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_free.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf
+#
+
+#= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf 
+#     Query mRNAs :    1641 in    1622 loci  (1571 multi-exon transcripts)
+#            (18 multi-transcript loci, ~1.0 transcripts per locus)
+# Reference mRNAs :    1680 in    1653 loci  (1592 multi-exon)
+# Super-loci w/ reference transcripts:     1514
+#-----------------| Sensitivity | Precision  |
+        Base level:    89.9     |    92.6    |
+        Exon level:    91.5     |    93.6    |
+      Intron level:    93.9     |    96.1    |
+Intron chain level:    87.2     |    88.4    |
+  Transcript level:    85.0     |    87.0    |
+       Locus level:    85.3     |    86.9    |
+
+     Matching intron chains:    1388
+       Matching transcripts:    1428
+              Matching loci:    1410
+
+          Missed exons:     351/5596	(  6.3%)
+           Novel exons:     234/5469	(  4.3%)
+        Missed introns:     233/3927	(  5.9%)
+         Novel introns:     145/3835	(  3.8%)
+           Missed loci:     133/1653	(  8.0%)
+            Novel loci:      92/1622	(  5.7%)
+
+ Total union super-loci across all input datasets: 1606 
+1641 out of 1641 consensus transcripts written in gffcmp.annotated.gtf (0 discarded as redundant)
+
+  ```
+# Run for ref sup
+ ```
+ # gffcompare v0.11.2 | Command line was:
+#gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_sup.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf
+#
+
+#= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf 
+#     Query mRNAs :    1786 in    1708 loci  (1672 multi-exon transcripts)
+#            (59 multi-transcript loci, ~1.0 transcripts per locus)
+# Reference mRNAs :    1810 in    1730 loci  (1681 multi-exon)
+# Super-loci w/ reference transcripts:     1594
+#-----------------| Sensitivity | Precision  |
+        Base level:    90.7     |    91.7    |
+        Exon level:    91.3     |    93.1    |
+      Intron level:    93.9     |    95.9    |
+Intron chain level:    86.9     |    87.4    |
+  Transcript level:    85.5     |    86.7    |
+       Locus level:    85.7     |    86.8    |
+
+     Matching intron chains:    1461
+       Matching transcripts:    1548
+              Matching loci:    1482
+
+          Missed exons:     374/6166	(  6.1%)
+           Novel exons:     262/6050	(  4.3%)
+        Missed introns:     256/4334	(  5.9%)
+         Novel introns:     166/4240	(  3.9%)
+           Missed loci:     127/1730	(  7.3%)
+            Novel loci:      99/1708	(  5.8%)
+
+ Total union super-loci across all input datasets: 1693 
+1786 out of 1786 consensus transcripts written in gffcmp.annotated.gtf (0 discarded as redundant)
+ 
+  ```
         
