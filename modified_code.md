@@ -125,6 +125,20 @@ stringtie MC_MYR2_sec_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1
 # No. of transcript
 cat ref_sup_sec.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 ```
+## Comparing GTF files of 1ry & 2ry Alignment
+ ```
+# Install gffcompare
+conda install gffcompare
+
+# Run for ref free
+
+mkdir -p ~/workdir/project_ngs1/gtf-compare/compare-free && cd ~/workdir/project_ngs1/gtf-compare/compare-free
+gffcompare -r ~/workdir/project_ngs1/hisat_align/ref_free.gtf ~/workdir/project_ngs1/hisat_align/ref_free_sec.gtf
+
+# Run for ref sup
+mkdir -p ~/workdir/project_ngs1/gtf-compare/compare-sup && cd ~/workdir/project_ngs1/gtf-compare/compare-sup
+gffcompare -r ~/workdir/project_ngs1/hisat_align/ref_sup.gtf ~/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf
+ ```
 
 
 
