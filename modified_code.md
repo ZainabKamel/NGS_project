@@ -66,7 +66,7 @@ hisat2_extract_splice_sites.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GR
 hisat2_extract_exons.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > exons.tsv 
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.chromosome.10.fa Danio_rerio.GRCz11
 ```
-# Alignment
+## Alignment
 ```
 cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
@@ -97,10 +97,10 @@ cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup.gtf
 # No. of transcript
 cat ref_sup.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
-``
+```
 
-# Secondry Alignment
-``
+## Secondry Alignment
+```
 cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
@@ -111,7 +111,6 @@ hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -
 ```
 # convert the SAM file into BAM file 
 samtools view -bS MC_MYR2_sec_align.sam > MC_MYR2_sec_align.bam
-```
 # convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
 ```
