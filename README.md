@@ -80,16 +80,16 @@ use stringtie to get transcript
 
 # Run for ref free Report
  ```
- # gffcompare v0.11.2 | Command line was:
-#gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_free.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf
-#
+gffcompare v0.11.2 | Command line was:
+gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_free.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf
 
-#= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf 
-#     Query mRNAs :    1641 in    1622 loci  (1571 multi-exon transcripts)
-#            (18 multi-transcript loci, ~1.0 transcripts per locus)
-# Reference mRNAs :    1680 in    1653 loci  (1592 multi-exon)
-# Super-loci w/ reference transcripts:     1514
-#-----------------| Sensitivity | Precision  |
+
+= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf 
+     Query mRNAs :    1641 in    1622 loci  (1571 multi-exon transcripts)
+            (18 multi-transcript loci, ~1.0 transcripts per locus)
+ Reference mRNAs :    1680 in    1653 loci  (1592 multi-exon)
+ Super-loci w/ reference transcripts:     1514
+-----------------| Sensitivity | Precision  |
         Base level:    89.9     |    92.6    |
         Exon level:    91.5     |    93.6    |
       Intron level:    93.9     |    96.1    |
@@ -114,16 +114,16 @@ Intron chain level:    87.2     |    88.4    |
   ```
 # Run for ref sup
  ```
- # gffcompare v0.11.2 | Command line was:
-#gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_sup.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf
-#
+ gffcompare v0.11.2 | Command line was:
+gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_sup.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf
 
-#= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf 
-#     Query mRNAs :    1786 in    1708 loci  (1672 multi-exon transcripts)
-#            (59 multi-transcript loci, ~1.0 transcripts per locus)
-# Reference mRNAs :    1810 in    1730 loci  (1681 multi-exon)
-# Super-loci w/ reference transcripts:     1594
-#-----------------| Sensitivity | Precision  |
+
+= Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf 
+     Query mRNAs :    1786 in    1708 loci  (1672 multi-exon transcripts)
+            (59 multi-transcript loci, ~1.0 transcripts per locus)
+ Reference mRNAs :    1810 in    1730 loci  (1681 multi-exon)
+ Super-loci w/ reference transcripts:     1594
+-----------------| Sensitivity | Precision  |
         Base level:    90.7     |    91.7    |
         Exon level:    91.3     |    93.1    |
       Intron level:    93.9     |    95.9    |
