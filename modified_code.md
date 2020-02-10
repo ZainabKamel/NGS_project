@@ -96,15 +96,15 @@ cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup.gtf
 # No. of transcript
 cat ref_sup.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
-```
+``
 
 # Secondry Alignment
-```
+``
 cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 --secondary -S MC_MYR2_sec_align.sam
-```
+``
 
 # Prepare the SAM & BAM files for 2ry
 ```
