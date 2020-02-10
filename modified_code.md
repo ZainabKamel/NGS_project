@@ -83,6 +83,7 @@ samtools view -bS MC_MYR2_align.sam > MC_MYR2_align.bam
 #convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_align.bam -o MC_MYR2_align.sorted.bam
 ```
+
 ## Assembly
 ```
 # install stringtie
@@ -118,6 +119,19 @@ samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
 ```
 we have accessed https://www.samformat.info/sam-format-flag to make sure of the obtained 2ry alignment 
 ```
+
+## Prepare Visualization Using igv
+```
+## indexing bam files
+samtools index MC_MYR2_align.sorted.bam 
+samtools index MC_MYR2_sec_align.sorted.bam 
+
+## indexing fasta file
+cd ~/workdir/project_ngs1/sample_data
+samtools faidx Danio_rerio.GRCz11.dna.chromosome.10.fa
+
+```
+
 ## Assembly
 ```
 # Assembly without known annotations
