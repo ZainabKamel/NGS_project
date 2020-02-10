@@ -19,7 +19,7 @@ for the code open modified_code file
 6. Indexing 
 7. gzip 
 
-# hisat report
+# hisat report for 1ry Alignment
 ```
 5000000 reads; of these:
   5000000 (100.00%) were paired; of these:
@@ -37,20 +37,42 @@ for the code open modified_code file
         35726 (0.37%) aligned >1 times
 4.66% overall alignment rate
  ```
+# hisat report for 1ry Alignment
+```
+5000000 reads; of these:
+  5000000 (100.00%) were paired; of these:
+    4824102 (96.48%) aligned concordantly 0 times
+    116079 (2.32%) aligned concordantly exactly 1 time
+    59819 (1.20%) aligned concordantly >1 times
+    ----
+    4824102 pairs aligned concordantly 0 times; of these:
+      1413 (0.03%) aligned discordantly 1 time
+    ----
+    4822689 pairs aligned 0 times concordantly or discordantly; of these:
+      9645378 mates make up the pairs; of these:
+        9531120 (98.82%) aligned 0 times
+        52847 (0.55%) aligned exactly 1 time
+        61411 (0.64%) aligned >1 times
+4.69% overall alignment rate
+```
 
-## Prepare the SAM file for assembly
+## Prepare the SAM & BAM files for assembly
  ```
 # install Samtools
 
 # convert the SAM file into BAM file then sort it
 
 use stringtie to get transcript
-
+ ```
 ## Transcript 
+```
+1ry Assembly without known annotations have 1680 transcript  
 
-Assembly without known annotations have 1680 transcript  
+1ry Assembly with known previous annotations have 1814 transcript 
 
-Assembly with known previous annotations have 1814 transcript 
+2ry Assembly without known annotations have 1641 transcript  
+
+2ry Assembly with known previous annotations have 1786 transcript
  ```
         
         
