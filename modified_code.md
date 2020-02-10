@@ -114,6 +114,9 @@ samtools view -bS MC_MYR2_sec_align.sam > MC_MYR2_sec_align.bam
 # convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
 ```
+# Checking the 2ry alignment 
+we have accessed https://www.samformat.info/sam-format-flag to make sure of the obtained 2ry alignment 
+
 ## Assembly
 ```
 # Assembly without known annotations
