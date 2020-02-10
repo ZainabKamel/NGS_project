@@ -37,7 +37,7 @@ for the code open modified_code file
         35726 (0.37%) aligned >1 times
 4.66% overall alignment rate
  ```
-# hisat report for 1ry Alignment
+# hisat report for 2ry Alignment
 ```
 5000000 reads; of these:
   5000000 (100.00%) were paired; of these:
