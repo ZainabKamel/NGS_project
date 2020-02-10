@@ -55,7 +55,10 @@ for the code open modified_code file
         61411 (0.64%) aligned >1 times
 4.69% overall alignment rate
 ```
-
+# checking flags for 2ry Alignment 
+```
+Kindly check the attached Image1
+```
 ## Prepare the SAM & BAM files for assembly
  ```
 # install Samtools
