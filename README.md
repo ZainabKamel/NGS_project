@@ -111,7 +111,7 @@ Intron chain level:    87.2     |    88.4    |
 1641 out of 1641 consensus transcripts written in gffcmp.annotated.gtf (0 discarded as redundant)
 
   ```
-# Run for ref sup
+# Run for ref sup report
  ```
  gffcompare v0.11.2 | Command line was:
 gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_sup.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_sup_sec.gtf
