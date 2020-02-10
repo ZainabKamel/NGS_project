@@ -1,4 +1,4 @@
-## create the conda env if you have not already did
+## Create the conda env if you have not already did
 ```
 conda create -y --name project python=3.6
 conda activate project
