@@ -104,12 +104,13 @@ cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 --secondary -S MC_MYR2_sec_align.sam
-``
+```
 
 # Prepare the SAM & BAM files for 2ry
 ```
 # convert the SAM file into BAM file 
 samtools view -bS MC_MYR2_sec_align.sam > MC_MYR2_sec_align.bam
+```
 #convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
 ```
