@@ -1,4 +1,10 @@
-## NGS_project
+## NGS1_project
+
+# Git hub link
+```
+https://github.com/ZainabKamel/NGS_project
+```
+# Code file
 ```
 for the code open modified_code file
 ```
