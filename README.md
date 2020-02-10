@@ -68,9 +68,17 @@ Kindly check the attached Image1
 use stringtie to get transcript
  ```
  
-## prepare files for igv
+## Prepare Visualization Using igv
 ```
-index bam & fasta files 
+## indexing bam files for 1ry & 2ry alignment
+ MC_MYR2_align.sorted.bam 
+ MC_MYR2_sec_align.sorted.bam 
+
+## indexing fasta file
+Danio_rerio.GRCz11.dna.chromosome.10.fa
+
+## download the sorted indexed files (*.bam, *.bai, *.fa and *.fai) from jupyter 
+
 by using igv program for visualization please check the image (IGV_Vis_Align_1-2ry)
 ```
 ## Transcript 
