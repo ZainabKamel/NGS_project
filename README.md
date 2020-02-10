@@ -67,6 +67,12 @@ Kindly check the attached Image1
 
 use stringtie to get transcript
  ```
+ 
+## prepare files for igv
+```
+index bam & fasta files 
+by using igv program for visualization please check the image (IGV_Vis_Align_1-2ry)
+```
 ## Transcript 
 ```
 1ry Assembly without known annotations have 1680 transcript  
