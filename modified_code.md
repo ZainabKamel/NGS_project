@@ -52,7 +52,7 @@ gzip MC_MYR2_R1_5M.fastq
 gzip MC_MYR2_R2_5M.fastq
 ```
 
-## for Alignment
+## Preparing for Alignment
 ```
 # Install hisat 
 conda install -c bioconda -y hisat2
@@ -64,15 +64,16 @@ ln -s ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.dna.chromosome.10.fa
 hisat2_extract_splice_sites.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > splicesites.tsv
 hisat2_extract_exons.py ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf > exons.tsv 
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv Danio_rerio.GRCz11.dna.chromosome.10.fa Danio_rerio.GRCz11
-
-#Align
+```
+# Alignment
+```
 cd ~/workdir/project_ngs1/hisat_align
 R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
 R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
 hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 -S MC_MYR2_align.sam
 ```
 
-# Prepare the SAM file for assembly
+# Prepare the SAM & BAM files
 ```
 # install Samtools
 conda install -y samtools
@@ -81,20 +82,50 @@ samtools view -bS MC_MYR2_align.sam > MC_MYR2_align.bam
 #convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_align.bam -o MC_MYR2_align.sorted.bam
 ```
-
+## Assembly
+```
 # install stringtie
 conda install -y stringtie
 
 # Assembly without known annotations
 stringtie MC_MYR2_align.sorted.bam --rf -l ref_free -o ref_free.gtf
-
-## how many transcript do you have?
+# No. of transcript
 cat ref_free.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 
 # Assembly with known previous annotations
 stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup.gtf
-
-## how many transcript do you have?
+# No. of transcript
 cat ref_sup.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
+```
+
+# Secondry Alignment
+```
+cd ~/workdir/project_ngs1/hisat_align
+R1="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R1_5M.fastq.gz"
+R2="$HOME/workdir/project_ngs1/sample_data/MC_MYR2_R2_5M.fastq.gz"
+hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -2 $R2 --secondary -S MC_MYR2_sec_align.sam
+```
+
+# Prepare the SAM & BAM files for 2ry
+```
+# convert the SAM file into BAM file 
+samtools view -bS MC_MYR2_sec_align.sam > MC_MYR2_sec_align.bam
+#convert the BAM file to a sorted BAM file. 
+samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
+```
+## Assembly
+```
+# Assembly without known annotations
+stringtie MC_MYR2_sec_align.sorted.bam --rf -l ref_free -o ref_free_sec.gtf
+# No. of transcript
+cat ref_free_sec.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
+
+# Assembly with known previous annotations
+stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup_sec.gtf
+# No. of transcript
+cat ref_sup_sec.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
+```
+
+
 
 
