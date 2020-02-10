@@ -77,12 +77,11 @@ use stringtie to get transcript
 ## Comparing GTF files of 1ry & 2ry Alignment
  ```
 # Install gffcompare
-
+```
 # Run for ref free Report
  ```
 gffcompare v0.11.2 | Command line was:
 gffcompare -r /home/ngs/workdir/project_ngs1/hisat_align/ref_free.gtf /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf
-
 
 = Summary for dataset: /home/ngs/workdir/project_ngs1/hisat_align/ref_free_sec.gtf 
      Query mRNAs :    1641 in    1622 loci  (1571 multi-exon transcripts)
