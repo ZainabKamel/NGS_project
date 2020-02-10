@@ -6,7 +6,7 @@ https://github.com/ZainabKamel/NGS_project
 ```
 # Code file
 ```
-for the code open modified_code file
+for the code open final_code file
 ```
 # Data Downloading   
 1. Sample Data
