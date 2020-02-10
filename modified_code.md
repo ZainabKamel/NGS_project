@@ -47,7 +47,7 @@ sudo apt install seqtk
 # subsetting to 5M 
 seqtk sample -s100 MC_MYR2_R1.fastq 5000000 > MC_MYR2_R1_5M.fastq
 seqtk sample -s100 MC_MYR2_R2.fastq 5000000 > MC_MYR2_R2_5M.fastq
-# copress files
+# compress files
 gzip MC_MYR2_R1_5M.fastq
 gzip MC_MYR2_R2_5M.fastq
 ```
