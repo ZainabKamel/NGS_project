@@ -13,11 +13,11 @@ for the code open modified_code file
 # Alignment
 1. Install hisat
 2. mkdir ~/project_ngs1/hisat_align/hisat_index && cd ~/project_ngs1/hisat_align/hisat_index
-3. gunzip data 
+3. extract the data by gunzip
 4. Install seqtk 
 5. subsetting to 5M by seqtk package
 6. Indexing 
-7. gzip 
+7. gzip to recompress the files
 
 # hisat report for 1ry Alignment
 ```
