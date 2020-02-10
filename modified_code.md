@@ -24,7 +24,7 @@ wget ftp://ftp.ensembl.org/pub/release-99/gtf/danio_rerio/Danio_rerio.GRCz11.99.
 gunzip Danio_rerio.GRCz11.99.chr.gtf.gz
 ```
 
-## to get QC Report
+## QC Report
 ```
 # Install the QC file generator
 conda install -c bioconda fastqc 
@@ -40,6 +40,7 @@ mv ../sample_data/*zip ./
 multiqc -z -o . .
 ```
 
+## Data manipulation 
 ```
 # Download seqtk
 sudo apt install seqtk
