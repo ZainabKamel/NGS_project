@@ -111,7 +111,7 @@ hisat2 -p 1 -x hisat_index/Danio_rerio.GRCz11 --dta --rna-strandness RF -1 $R1 -
 # convert the SAM file into BAM file 
 samtools view -bS MC_MYR2_sec_align.sam > MC_MYR2_sec_align.bam
 ```
-#convert the BAM file to a sorted BAM file. 
+# convert the BAM file to a sorted BAM file. 
 samtools sort MC_MYR2_sec_align.bam -o MC_MYR2_sec_align.sorted.bam
 ```
 ## Assembly
