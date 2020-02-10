@@ -121,7 +121,7 @@ stringtie MC_MYR2_sec_align.sorted.bam --rf -l ref_free -o ref_free_sec.gtf
 cat ref_free_sec.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 
 # Assembly with known previous annotations
-stringtie MC_MYR2_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup_sec.gtf
+stringtie MC_MYR2_sec_align.sorted.bam --rf -l ref_sup -G ~/workdir/project_ngs1/sample_data/Danio_rerio.GRCz11.99.chr.gtf -o ref_sup_sec.gtf
 # No. of transcript
 cat ref_sup_sec.gtf | grep -v "^@" | awk '$3=="transcript"' | wc -l
 ```
